@@ -37,12 +37,12 @@
         function validateContact(){
             const name=document.getElementById('c_name').value.trim();
             const email=document.getElementById('c_email').value.trim();
-            const name=document.getElementById('c_message').value.trim();
-            const name=document.getElementById('conatactError');
+            const msg=document.getElementById('c_message').value.trim();
+            const err=document.getElementById('conatactError');
             err.textContent="";
 
             if(name.length<2){ err.textContent="Name"; return false ;}
-            if (!email.includes(@)){ err.textContent="A non-formal email" ; return false ;}
+            if (!email.includes("@")){ err.textContent="A non-formal email" ; return false ;}
             if (msg.length<10){err.textContent="The message is very short"; return false ;}
 
             alert("Message sent");
