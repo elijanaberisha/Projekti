@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glazed Skin</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="brand">Glazed Skin</div>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="login.html">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1>Contact Us</h1>
+            <form id="contactForm" onsubmit="return" validateContact()>
+                <input type="text" id="c_name" placeholder="Name" required>
+                <input type="email" id="c_email" placeholder="Email" required>
+                <textarea id="c_message" placeholder="Message" required></textarea>
+                <div id="contactError" class="Error"></div>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateContact(){
+            const name=document.getElementById('c_name').value.trim();
+            const email=document.getElementById('c_email').value.trim();
+            const name=document.getElementById('c_message').value.trim();
+            const name=document.getElementById('conatactError');
+            err.textContent="";
+
+            if(name.length<2){ err.textContent="Name"; return false ;}
+            if (!email.includes(@)){ err.textContent="A non-formal email" ; return false ;}
+            if (msg.length<10){err.textContent="The message is very short"; return false ;}
+
+            alert("Message sent");
+            return false;
+        }
+    </script>
+
+    <footer>
+        &copy;Glazed Skin. All rights reserved!
+    </footer>
+</body>
+</html>
