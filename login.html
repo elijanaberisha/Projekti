@@ -80,5 +80,21 @@
     </div>
   </div>
 </div>
+
+<script>
+    function validateLogin(){
+        const email = document.getElementById('email').value.trim();
+        const pass = document.getElementById('password').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const surname = document.getElementById('surname').value.trim();
+        const err = document.getElementById('loginError').value.trim();
+        err.textContent="";
+
+        if(name.length < 2){err.textContent="Name must be at least 2 characters" ; return false ; }
+        if(surname.length < 2){err.textContent="Surname must be at least 2 characters"; return false ; }
+        if(!email.includes("@")){err.textContent="Invalid email address"; return false ;}
+        if(pass.length < 6){err.textContent="Password must contain at least 6 characters"; return false ;}
+    }
+</script>
 </body>
 </html>
