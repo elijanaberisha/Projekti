@@ -67,8 +67,21 @@
              <span>Send</span>
              <span class="button-icon">✉️</span>
             </button>
+            </form>
     </div>
   </div>
+         
+        <div class="social-section">
+          <h2>Follow Us</h2>
+           <div class="social-links">
+           <a href="#" class="social-link" aria-label="Facebook">📘</a>
+           <a href="#" class="social-link" aria-label="Instagram">📷</a>
+           <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+           <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+        </div>
+  </div>
+</div>
+
 
     <script>
         function validateContact(){
@@ -82,7 +95,7 @@
             if (!email.includes("@")){ err.textContent="A non-formal email" ; return false ;}
             if (msg.length<10){err.textContent="The message is very short"; return false ;}
 
-            alert("Message sent");
+            alert("Message sent successfully!");
             return false;
         }
     </script>
