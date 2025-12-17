@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glazed Skin</title>
+    <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="site-header">
+        <nav class="nav">
             <div class="brand">Glazed Skin</div>
             <div>
                 <a href="index.html">Home</a>
@@ -21,8 +22,24 @@
     </header>
 
     <div class="container">
-        <div class="card">
             <h1>Contact Us</h1>
+            <p class="subtitle">We are here to help you! Send us a message or contact us directly.</p>
+
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3><Address></Address></h3>
+                        <p>St. Naim Frasheri<br>Prishtine 10000<br>Kosovo</p>
+                    </div>
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>info@glazedskin.com<br>support@glazedskin.com</p>
+                </div>
+                </div>
+            </div>
+
             <form id="contactForm" onsubmit="return" validateContact()>
                 <input type="text" id="c_name" placeholder="Name" required>
                 <input type="email" id="c_email" placeholder="Email" required>
