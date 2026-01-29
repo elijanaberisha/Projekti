@@ -1,0 +1,246 @@
+:root {
+  font-family: system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --primary: #f7c8da;
+  --secondary: #f9d7e4;
+  --card-w: 260px;
+  --card-h: 330px;
+  --card-gap: 36px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #f5e9d8;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.site-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: linear-gradient(135deg, #ffb3d9 0%, #ffc8e0 30%, #e8b4d4 60%, #d4a5d9 100%);
+  box-shadow: 0 4px 20px rgba(255, 179, 217, 0.3);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+.Brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #111;
+}
+.nav {
+  display: flex;
+  gap: 12px;
+}
+.nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.nav a:hover {
+  opacity: 0.7;
+}
+.nav a.active {
+  font-weight: 700;
+}
+main {
+  flex: 1;
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #2a1b1f, #1a1215);
+}
+main h1 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 2.5rem;
+}
+main p {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.slider-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.slider-container .nav-btn {
+  flex-shrink: 0;
+  z-index: 10;
+}
+.slider {
+  display: flex;
+  align-items: center;
+  gap: var(--card-gap);
+  list-style: none;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  min-width: 0;
+  overflow: visible;
+}
+.card {
+  width: 150px;
+  height: 200px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  opacity: 0.3;
+  transform: scale(0.8);
+  transition: width 0.4s ease, height 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14px;
+  display: block;
+}
+.card.active {
+  width: var(--card-w);
+  height: var(--card-h);
+  opacity: 1;
+  transform: scale(1);
+}
+.card:hover:not(.active) {
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+.card.active:hover {
+  transform: scale(1.05);
+}
+.nav-btn {
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+.nav-btn:hover {
+  opacity: 0.8;
+}
+.prev {
+  background: #666;
+  color: #fff;
+}
+.next {
+  background: #7CFC00;
+  color: #000;
+}
+.autoplay-control {
+  margin-top: 40px;
+  text-align: center;
+}
+.autoplay-control label {
+  font-size: 14px;
+  color: #f5e9d8;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.autoplay-control input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+address {
+  width: 100%;
+  background: #1f1f1f;
+  color: #eee;
+  padding: 26px 20px;
+  text-align: center;
+  font-style: normal;
+  line-height: 1.8;
+}
+footer {
+  width: 100%;
+  background: linear-gradient(180deg, #2d1b2e 0%, #1a0f1a 100%);
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #f5e9d8;
+  border-top: 2px solid rgba(255, 179, 217, 0.2);
+  box-shadow: 0 -4px 20px rgba(212, 165, 217, 0.2);
+}
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main {
+    padding: 40px 15px;
+  }
+  main h1 {
+    font-size: 1.8rem;
+  }
+  .slider-container {
+    gap: 10px;
+    padding: 0 10px;
+  }
+   .nav-btn {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+   .card {
+    width: 120px;
+    height: 160px;
+  }
+   .card.active {
+    width: 200px;
+    height: 260px;
+  }
+}
